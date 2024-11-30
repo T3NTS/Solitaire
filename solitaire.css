@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'Kanit', sans-serif;
+  src: url(fonts/Kanit-Black.ttf);
+}
+
+body {
+  background-color: #222222;
+  font-family: 'Kanit', sans-serif;
+}
+
+.card {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2vw;
+}
+
+
+.flip {
+  transform: rotateY(-180deg);
+}
+
+.dimension {
+  width: 100%;
+}
+
+.css-compact {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.row-div-full {
+  margin-bottom: 1.5vw;
+}
+
+.card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.45s ease-out;
+  cursor: pointer;
+}
+
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.45s ease-out;
+}
+
+.css-deck {
+  border: #111111;
+  border-style: solid;
+  border-radius: 5px;
+  height: 12vw;
+  width: 8.3vw;
+  column-gap: 2vw;
+  transition: 0.5s ease-in-out;
+}
+
+.css-deck-full:hover,
+.final-container:hover,
+.info,
+.pb-info {
+  filter: drop-shadow(4px 8px 12px black);
+}
+
+.css-trash {
+  border: #111111;
+  border-style: solid;
+  border-radius: 5px;
+  height: 12vw;
+  width: 8.3vw;
+  background-image: url(backgrounds/card_bg_8.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.css-container {
+  border: #111111;
+  border-style: solid;
+  border-radius: 2px;
+  background-image: url(backgrounds/card_bg_3.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 8.3vw;
+  height: 12vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vw;
+}
+
+.reset-button {
+  width: 100%;
+  height: 100%;
+}
+
+.spades,
+.clubs,
+.hearts,
+.diamonds {
+  background-size: 5.2vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.spades {
+  background-image: url(suits/spades.png);
+}
+
+.clubs {
+  background-image: url(suits/clubs.png);
+}
+
+.hearts {
+  background-image: url(suits/hearts.png);
+}
+
+.diamonds {
+  background-image: url(suits/diamonds.png);
+}
+
+.final-container {
+  border: #111111;
+  border-style: solid;
+  border-radius: 5px;
+  height: 12vw;
+  width: 8.3vw;
+  position: relative;
+  color: #DFDFDF;
+  transition: 0.5s ease-in-out;
+}
+
+.css-cards-div {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  display: grid;
+  gap: 2vw;
+  grid-auto-flow: column;
+}
+
+.row-div {
+  display: grid;
+  grid-auto-flow: column;
+  width: 68vw;
+  column-gap: 2vw;
+  position: absolute;
+  top: 15vw;
+  left: 5.4vw;
+}
+
+.draggable.dragging {
+  opacity: 0;
+}
+
+.css-final-div {
+  display: flex;
+  column-gap: 2vw;
+  position: absolute;
+  top: 1vw;
+  right: 22.325vw;
+  margin-bottom: 0;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px; 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.disabled {
+  display: none;
+}
+
+.stats,
+.pb-stats {
+  border: #111111;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #111111;
+  width: 20vw;
+  height: 10vw;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  color: #DFDFDF;
+  right: 1vw;
+  transition: 0.5s ease-in-out;
+}
+
+.stats {
+  top: 20%;
+}
+
+.pb-stats {
+  bottom: 20%;
+}
+
+.info,
+.pb-info {
+  position: absolute;
+  left: 14%;
+  top: 39%;
+  display: flex;
+  gap: 5vw;
+}
+
+.points-div,
+.moves-div,
+.pb-points-div,
+.pb-moves-div {
+  display: flex;
+  gap: 1vw;
+  color: #DFDFDF;
+  font-size: 1vw;
+}
+
+.moves,
+.points,
+.pb-moves,
+.pb-points {
+  color: #4294A6;
+  font-size: 1vw;
+}
+
+.time,
+.pb-time {
+  position: absolute;
+  bottom: 0;
+  color: #DFDFDF;
+  font-size: 1.2vw;
+  margin-bottom: 1vw;
+}
+
+.text-your-stats,
+.pb-text-your-stats {
+  position: absolute;
+  font-size: 1.5vw;
+  top: 0;
+  margin-top: 1vw;
+}
+
+.text-your-stats {
+  left: 30%;
+}
+
+.pb-text-your-stats {
+  left: 22.5%;
+}
